@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ApplicationIcon>keyboard_color.ico</ApplicationIcon>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <RootNamespace>GK540_Color_Changer</RootNamespace>
+        <UseWindowsForms>true</UseWindowsForms>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Local\en_local.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>en_local.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Local\pl_local.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>pl_local.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Local\en_local.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>en_local.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Local\pl_local.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>pl_local.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>
