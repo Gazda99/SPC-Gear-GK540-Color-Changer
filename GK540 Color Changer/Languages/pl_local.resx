@@ -96,6 +96,9 @@
     <data name="btBackgroundChange" xml:space="preserve">
         <value>Ustaw tło na wspólny</value>
     </data>
+    <data name="btUndo" xml:space="preserve">
+        <value>Cofnij</value>
+    </data>
     <!---->
 
     <!--Labels-->

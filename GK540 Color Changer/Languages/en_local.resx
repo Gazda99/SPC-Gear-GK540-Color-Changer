@@ -98,6 +98,9 @@
     <data name="btBackgroundChange" xml:space="preserve">
         <value>Set bg to common</value>
     </data>
+    <data name="btUndo" xml:space="preserve">
+        <value>Undo</value>
+    </data>
     <!---->
 
     <!--Labels-->

@@ -31,7 +31,7 @@ public class MainForm : Form {
     private readonly History _history = new History();
     private RefColor _commonColor;
 
-    
+
     [DllImport("User32.dll")]
     private static extern bool ReleaseCapture();
 
@@ -200,12 +200,21 @@ public class MainForm : Form {
 
         //init bg color changer button
         Button btChangeBg = new CustomButton() {
-            Text = Locals.GetString("btBackgroundChange"),
-            Location = new Point(SetXLocation(cbxMode), RowY(2)),
             Size = new Size(175, height),
+            Location = new Point(SetXLocation(cbxMode), RowY(2)),
+            Text = Locals.GetString("btBackgroundChange")
         };
         btChangeBg.Click += ButtonChangeBgOnClick;
         this.Controls.Add(btChangeBg);
+
+        //init button undo 
+        Button btUndo = new CustomButton {
+            Size = new Size(175, height),
+            Location = new Point(SetXLocation(cbxMode), RowY(3)),
+            Text = Locals.GetString("btUndo")
+        };
+        btUndo.Click += (object _, EventArgs _) => GoBackHistory();
+        this.Controls.Add(btUndo);
 
 
         //init combobox with profiles
@@ -324,7 +333,10 @@ public class MainForm : Form {
 
     private void MouseDownGoBackHistory(object sender, MouseEventArgs e) {
         if (e.Button != MouseButtons.XButton1) return;
+        GoBackHistory();
+    }
 
+    private void GoBackHistory() {
         HistoryEvent historyEvent = _history.GetLastEvent();
         if (historyEvent is null) return;
 
